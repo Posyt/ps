@@ -1,0 +1,6 @@
+if launchctl list | grep mongod; then
+	echo "MongoDB is already running";
+else
+	echo "Starting mongod";
+	mongod --config /usr/local/etc/mongod.conf
+fi

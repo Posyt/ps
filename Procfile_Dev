@@ -1,3 +1,4 @@
 web: bundle exec rails s -p $PORT
 worker: bundle exec sidekiq -C config/sidekiq.yml
 redis: redis-server --loglevel warning --appendfsync no --save ""
+mongodb: ./start-mongodb

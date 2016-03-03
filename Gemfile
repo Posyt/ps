@@ -4,6 +4,9 @@ ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
 
+# The Database
+# gem 'pg'
+gem 'mongoid', '~> 5.1.0'
 
 # Elasticsearch DB
 gem 'elasticsearch-model'
@@ -18,6 +21,11 @@ gem 'sinatra', require: false
 gem 'slim'
 gem 'sidekiq-failures'
 gem 'sidekiq-statistic'
+gem 'sidetiq'
+
+# RSS Feed Reader
+gem 'feedjira'
+
 
 
 # Use SCSS for stylesheets
