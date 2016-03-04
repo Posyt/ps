@@ -23,6 +23,9 @@ gem 'sidekiq-failures'
 gem 'sidekiq-statistic'
 gem 'sidetiq'
 
+# Admin
+gem 'rails_admin'
+
 # RSS Feed Reader
 gem 'feedjira'
 
