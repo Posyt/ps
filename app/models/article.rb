@@ -72,10 +72,11 @@ class Article
     url = Article.resolve_redirects(url)
     # Normalize url by removing query and fragment
     uri = Addressable::URI.parse(url)
-    params_to_remove = /rer|utm/
+    params_to_remove = /rer|utm|emc|partner/
     uri.query_values = uri.query_values.delete_if { |k,v| params_to_remove === k.downcase } if uri.query_values
-    uri.query
-    return uri.to_s
+    result = uri.to_s
+    result = result[0...-1] if result.last == "?"
+    return result
   end
 
   def self.resolve_redirects(url)
@@ -83,7 +84,7 @@ class Article
     if response
         return response.to_hash[:url].to_s
     else
-        return url
+        return Faraday.get(url)["location"] rescue url
     end
   end
 
