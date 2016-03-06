@@ -19,7 +19,7 @@ class Article
   field :author, type: String
   index  author: 1
   field :summary, type: String
-  index  summary: 1
+  # index  summary: 1 # NOTE: this sometimes contains html, so don't index it
   field :points, type: Integer # e.g. number of upvotes
   index  points: 1
   field :comments, type: Integer # e.g. number of comments
@@ -118,6 +118,10 @@ class Article
     setable_fields = [:source, :title, :description, :image_url, :published_at, :author, :summary, :points, :comments, :normalized_popularity]
     setable_attrs = attrs.slice(*setable_fields)
     self.attributes = setable_attrs
+    # Limit string sizes
+    self.title = self.title[0...1000]
+    self.description = self.description[0...1000]
+    self.summary = self.summary[0...2000]
     # Merge categories
     self.categories = (self.categories || []) | attrs[:categories].map(&:downcase) if attrs.has_key?(:categories)
     # Merge sources

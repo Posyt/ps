@@ -19,7 +19,7 @@ class Source
   field :author, type: String
   index  author: 1
   field :summary, type: String
-  index  summary: 1
+  # index  summary: 1 # NOTE: this sometimes contains html, so don't index it
   field :points, type: Integer # e.g. number of upvotes
   index  points: 1
   field :comments, type: Integer # e.g. number of comments
