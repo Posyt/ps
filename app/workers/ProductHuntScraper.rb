@@ -16,7 +16,7 @@ class ProductHuntScraper
   def handle_url url
     xml = Faraday.get(url).body
     feed = Feedjira::Feed.parse xml
-    feed.entries.each do |e|
+    feed.entries.each_with_index do |e, i|
       title_attrs = e.title.split("&#8211;")
 
       attrs = { sources: [{}] }
@@ -30,7 +30,7 @@ class ProductHuntScraper
       attrs[:sources][0][:published_at] = DateTime.parse(e.published.to_s)
       # TODO: points, comments, normalized_popularity
 
-      Article.delay(queue: 'default', retry: false).create_or_update(attrs)
+      Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
     end
   end
 end

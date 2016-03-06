@@ -29,6 +29,14 @@ gem 'rails_admin'
 # RSS Feed Reader
 gem 'feedjira'
 
+# Web Scraper
+gem 'mechanize'
+
+# URI parsing and manipulation
+gem 'addressable'
+
+# Image attribute fetching
+gem 'fastimage'
 
 
 # Use SCSS for stylesheets

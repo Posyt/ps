@@ -18,7 +18,7 @@ class HackerNewsScraper
   def handle_url url
     xml = Faraday.get(url).body
     feed = Feedjira::Feed.parse xml
-    feed.entries.each do |e|
+    feed.entries.each_with_index do |e, i|
       title_attrs = e.title.split("&#8211;")
 
       attrs = { sources: [{}] }
@@ -32,7 +32,7 @@ class HackerNewsScraper
       attrs[:sources][0][:comments] = e.content.scan(/">.{0,1}(\d+).{0,1}comments/).flatten.first.to_i
       attrs[:sources][0][:normalized_popularity] = (attrs[:sources][0][:points] + attrs[:sources][0][:comments])/15 # assumes 1500 as soft maximum points + comments
 
-      Article.delay(queue: 'default', retry: false).create_or_update(attrs)
+      Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
     end
   end
 end

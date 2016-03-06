@@ -1,7 +1,4 @@
 class Article
-  # TODO: scrape the top level url on create
-  # TODO: index in elasticsearch on save
-
   include Mongoid::Document
   include Mongoid::Timestamps
   # include Mongoid::Attributes::Dynamic
@@ -40,9 +37,14 @@ class Article
   embeds_many :sources
   accepts_nested_attributes_for :sources
 
+  before_save :scrape
+  # TODO: index in elasticsearch on save
+
   def self.create_or_update attrs
     # Normalize the url for consistency
     attrs[:url] = Article.normalize_url(attrs[:url])
+    # Wait a second so future scrapes don't get 503 errors
+    sleep(rand(4..7))
     # Try to find a matching article
     article = Article.find_by(url: attrs[:url]) rescue nil
     # Update or create
@@ -60,9 +62,11 @@ class Article
     # Follow redirects to get actual url
     url = Article.resolve_redirects(url)
     # Normalize url by removing query and fragment
-    parsed = URI::parse(url)
-    parsed.fragment = parsed.query = nil
-    return parsed.to_s
+    uri = Addressable::URI.parse(url)
+    params_to_remove = /rer|utm/
+    uri.query_values = uri.query_values.delete_if { |k,v| params_to_remove === k.downcase } if uri.query_values
+    uri.query
+    return uri.to_s
   end
 
   def self.resolve_redirects(url)
@@ -70,7 +74,7 @@ class Article
     if response
         return response.to_hash[:url].to_s
     else
-        return nil
+        return url
     end
   end
 
@@ -82,6 +86,21 @@ class Article
     return conn.send method, url
     rescue Faraday::Error, Faraday::Error::ConnectionFailed => e
     return nil
+  end
+
+  def self.find_best_image image_urls
+    biggest = 0
+    best = nil
+    image_urls.each do |url|
+      size = FastImage.size(url)
+      hypotenuse = Math.sqrt(size[0]^2 + size[1]^2)
+      if hypotenuse > biggest
+        best = url
+        biggest = hypotenuse
+      end
+      return best if hypotenuse > 300 # Stop looking if image greater than 300 pixels diagonal
+    end
+    best
   end
 
   def merge_attrs attrs
@@ -107,13 +126,23 @@ class Article
         # Merge categories
         source.categories = (source.categories || []) | s[:categories].map(&:downcase) if s.has_key?(:categories)
         self.categories = (self.categories || []) | s[:categories].map(&:downcase) if s.has_key?(:categories)
-        # Set a temporary title and published_at on the parent Article if none exist
-        self.title = s[:title] unless self.title
-        self.published_at = s[:published_at] unless self.published_at
         # Append the scrape time
         source.scrape_times += [DateTime.now]
       end
     end
     return true
+  end
+
+  def scrape
+    agent = Mechanize.new
+    agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    page = agent.get(self.url)
+    !self.title && self.title = page.title.strip rescue self.title
+    !self.description && self.description = page.at("head meta[name='description']")["content"].strip rescue self.description
+    !self.author && self.author = page.at("head meta[name='author']")["content"].strip rescue self.author
+    !self.categories && self.categories = self.categories | page.at("head meta[name='keywords']")["content"].split(",").map(&:strip).map(&:downcase) rescue self.categories
+    !self.image_url && self.image_url = Article.find_best_image(page.images.map(&:to_s)) rescue self.image_url
+    !self.source && self.source = URI.parse(self.url).host.downcase rescue self.source
+    true
   end
 end

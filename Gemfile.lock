@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -69,6 +70,8 @@ GEM
     concurrent-ruby (1.0.1)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
+    domain_name (0.5.20160216)
+      unf (>= 0.0.5, < 1.0.0)
     elasticsearch (1.0.15)
       elasticsearch-api (= 1.0.15)
       elasticsearch-transport (= 1.0.15)
@@ -88,6 +91,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    fastimage (1.8.1)
+      addressable (~> 2.3, >= 2.3.5)
     feedjira (2.0.0)
       faraday (~> 0.9)
       faraday_middleware (~> 0.9)
@@ -103,6 +108,8 @@ GEM
       tilt
     hashie (3.4.3)
     hitimes (1.2.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     ice_cube (0.13.3)
     jquery-rails (4.1.0)
@@ -119,6 +126,15 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mechanize (2.7.4)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2, < 3)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -132,8 +148,11 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     nested_form (0.3.2)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    ntlm-http (0.1.1)
     origin (2.2.0)
     puma (3.0.2)
     rack (1.6.4)
@@ -234,23 +253,30 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webrobots (0.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   byebug
   coffee-rails (~> 4.1.0)
   elasticsearch-model
   elasticsearch-rails
+  fastimage
   feedjira
   foreman
   jquery-rails
+  mechanize
   mongoid (~> 5.1.0)
   puma
   rails (= 4.2.5.2)
