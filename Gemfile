@@ -38,6 +38,9 @@ gem 'addressable'
 # Image attribute fetching
 gem 'fastimage'
 
+# Clean HTML
+gem 'sanitize'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -69,6 +69,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     connection_pool (2.2.0)
+    crass (1.0.2)
     debug_inspector (0.0.2)
     domain_name (0.5.20160216)
       unf (>= 0.0.5, < 1.0.0)
@@ -152,6 +153,8 @@ GEM
     net-http-persistent (2.9.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    nokogumbo (1.4.7)
+      nokogiri
     ntlm-http (0.1.1)
     origin (2.2.0)
     puma (3.0.2)
@@ -205,6 +208,10 @@ GEM
     redis (3.2.2)
     remotipart (1.2.1)
     safe_yaml (1.0.4)
+    sanitize (4.0.1)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4.1)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -281,6 +288,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.5.2)
   rails_admin
+  sanitize
   sass-rails (~> 5.0)
   sidekiq
   sidekiq-failures

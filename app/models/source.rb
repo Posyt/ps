@@ -32,9 +32,9 @@ class Source
   # field :scrape_meta, type: Hash # information that might be used to recreate the scrape that got this data
   field :scrape_times, type: Array, default: []
 
-  validates :name, presence: true
-  validates :url, presence: true, uniqueness: true
-  validates :title, length: { maximum: 1000 }
+  # validates :name, presence: true
+  # validates :url, presence: true, uniqueness: true
+  # validates :title, length: { maximum: 1000 }
 
   embedded_in :article
 end

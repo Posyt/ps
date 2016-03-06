@@ -58,6 +58,15 @@ class Article
     article.push(scrape_times: DateTime.now)
   end
 
+  def self.parse_feed rss_url
+    xml = Faraday.get(rss_url).body
+    feed = Feedjira::Feed.parse xml
+  end
+
+  def self.html_to_s html_string
+    Sanitize.clean(html_string).strip
+  end
+
   def self.normalize_url url
     # Follow redirects to get actual url
     url = Article.resolve_redirects(url)

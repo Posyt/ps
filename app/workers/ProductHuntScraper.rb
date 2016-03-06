@@ -14,8 +14,7 @@ class ProductHuntScraper
   end
 
   def handle_url url
-    xml = Faraday.get(url).body
-    feed = Feedjira::Feed.parse xml
+    feed = Article.parse_feed url
     feed.entries.each_with_index do |e, i|
       title_attrs = e.title.split("&#8211;")
 

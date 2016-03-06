@@ -94,7 +94,7 @@ RailsAdmin.config do |config|
       field :summary do
         column_width 200
         pretty_value do
-          bindings[:view].content_tag(:div, value, { title: value, style: 'white-space:normal;' })
+          bindings[:view].content_tag(:div, value, { title: value, style: 'white-space:normal; max-height:160px; overflow:hidden;' })
         end
       end
       field :points do
