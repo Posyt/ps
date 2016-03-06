@@ -11,7 +11,7 @@ class Source
   field :title, type: String
   index  title: 1
   field :description, type: String
-  index  description: 1
+  # index  description: 1
   field :image_url, type: String
   index  image_url: 1
   field :published_at, type: DateTime

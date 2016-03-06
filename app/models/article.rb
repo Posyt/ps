@@ -11,7 +11,7 @@ class Article
   field :source, type: String # e.g. the original source of the article like New York Times or Medium
   index  source: 1
   field :description, type: String
-  index  description: 1
+  # index  description: 1
   field :image_url, type: String
   index  image_url: 1
   field :published_at, type: DateTime
@@ -120,9 +120,9 @@ class Article
     setable_attrs = attrs.slice(*setable_fields)
     self.attributes = setable_attrs
     # Limit string sizes
-    self.title = self.title[0...1000]
-    self.description = self.description[0...1000]
-    self.summary = self.summary[0...2000]
+    self.title = self.title[0...1000] if self.title
+    self.description = self.description[0...1000] if self.description
+    self.summary = self.summary[0...2000] if self.summary
     # Merge categories
     self.categories = (self.categories || []) | attrs[:categories].map(&:downcase) if attrs.has_key?(:categories)
     # Merge sources
@@ -130,6 +130,8 @@ class Article
       setable_fields -= [:source]
       setable_fields += [:name, :url]
       attrs[:sources].each do |s|
+        # Only persist sources with a name
+        next unless s.has_key?(:name)
         # Normalize the url
         s[:url] = Article.normalize_url(s[:url]) if s.has_key?(:url)
         # Find the source by name or create a new one
