@@ -14,6 +14,12 @@ RailsAdmin.config do |config|
   ## == Pundit ==
   # config.authorize_with :pundit
 
+  config.authorize_with do
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["SIDEKIQ_USERNAME"] && password == ENV["SIDEKIQ_PASSWORD"]
+    end unless Rails.env.development?
+  end
+
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
@@ -36,7 +42,7 @@ RailsAdmin.config do |config|
   end
 
   config.navigation_static_links = {
-    'The Workers' => '/admin/theworkers'
+    'The Workers' => '/theworkers'
   }
 
   config.total_columns_width = 9999999
