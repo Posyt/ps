@@ -5,8 +5,8 @@
 # :verbose: false
 # :pidfile: ./tmp/pids/sidekiq.pid
 # :namespace: sidekiq_namespace
-# TODO: should concurrency be uped to 25 or something?
-:concurrency: 5
+# TODO: should concurrency be uped to 25 or something? Currently the db and http clients can't handle too many connections. Any I'm worried about getting throttled or blocked by websites for hitting their servers too concurrently
+:concurrency: 3
 :namespace: ps
 :queues:
   - [critical, 9]

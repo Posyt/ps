@@ -2,6 +2,8 @@ class Article
   include Mongoid::Document
   include Mongoid::Timestamps
   # include Mongoid::Attributes::Dynamic
+  include SearchableArticle
+
   field :categories, type: Array, default: [] # e.g. tech, podcasts, books
   index  categories: 1
   field :url, type: String # e.g. the most direct link to the article, try to click through short/tracking links and scrape the original if possible
@@ -144,6 +146,9 @@ class Article
         self.categories = (self.categories || []) | s[:categories].map(&:downcase) if s.has_key?(:categories)
         # Append the scrape time
         source.scrape_times += [DateTime.now]
+        # Update Timestamps - it's a nested doc so they don't auto update
+        source.created_at = DateTime.now unless source.created_at
+        source.updated_at = DateTime.now
       end
     end
     return true

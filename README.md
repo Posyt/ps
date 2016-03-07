@@ -25,8 +25,8 @@ heroku run rake db:mongoid:create_indexes
 ## TODO
 
 http://ctrlq.org/rss/
+https://www.rsssearchhub.com/
 
-- [ ] Beehance
 - [ ] Medium
 - [ ] Vice
 - [ ] Upworthy
@@ -42,5 +42,7 @@ http://ctrlq.org/rss/
 - [ ] Huff Po
 - [ ] Buzzfeed
 - [ ] Vox
+- [ ] Bloomberg
 - [ ] The Onion
 - [ ] Deep Dot Web
+- [ ] Behance
