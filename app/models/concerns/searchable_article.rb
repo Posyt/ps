@@ -17,8 +17,8 @@ module SearchableArticle
 		after_destroy lambda { Indexer.perform_async(:delete, self.class.to_s, self._id.to_s) }
 
     settings index: {
-			:number_of_shards => (1).to_i,
-			:number_of_replicas => (1).to_i,
+			:number_of_shards => (ENV["ELASTIC_SEARCH_SHARDS"] || 1).to_i,
+			:number_of_replicas => (ENV["ELASTIC_SEARCH_REPLICAS"] || 0).to_i,
 			:analysis => {
 				:filter => {
 					:autocomplete_ngram  => {
@@ -46,7 +46,7 @@ module SearchableArticle
 			}
 		} do
 			mappings dynamic: false do
-				indexes :_id, type: 'string', index: :not_analyzed, store: true # _id is an elasticsearch system value so use id
+				indexes :id, type: 'string', index: :not_analyzed
         indexes :source, type: 'string', analyzer: 'keyword'
 				indexes :url, type: 'string', index: :not_analyzed
 				indexes :title, type: 'string', analyzer: 'ps_english', fields: {
@@ -92,7 +92,7 @@ module SearchableArticle
 		def as_indexed_json(options={})
 			ret = {
         source: self.source,
-				_id: self._id.to_s,
+				id: self._id.to_s,
         url: self.url,
 				title: self.title,
 				author: self.author,
