@@ -12,6 +12,9 @@ gem 'mongoid', '~> 5.1.0'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+# Neo4j DB
+gem 'neography'
+
 # The Server
 gem 'puma'
 

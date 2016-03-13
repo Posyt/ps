@@ -11,5 +11,6 @@
 :queues:
   - [critical, 9]
   - [default, 5]
-  - [elasticsearch, 4]
+  - [elasticsearch, 5]
+  - [neo4j, 5]
   - [slow, 3]

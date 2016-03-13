@@ -5,13 +5,17 @@ The Posyt news scraper
 
 ## Development
 
-In the terminal
+Start the posyt-meteor `pm` server.
+MongoDB and Elasticsearch both run in the `pm` server, not here.
+
+Start the server
 ```
 ./s
 ```
 
 In a separate rails console (Only run this on initial configuration to create the index)
 ```
+rake db:mongoid:create_indexes
 Article.__elasticsearch__.create_index! force: true
 ```
 

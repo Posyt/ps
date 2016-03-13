@@ -3,6 +3,7 @@ class Article
   include Mongoid::Timestamps
   # include Mongoid::Attributes::Dynamic
   include SearchableArticle
+  include GraphableArticle
 
   field :categories, type: Array, default: [] # e.g. tech, podcasts, books
   index  categories: 1
