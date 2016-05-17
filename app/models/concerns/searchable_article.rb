@@ -66,6 +66,11 @@ module SearchableArticle
 				indexes :updated_at, type: 'date'
 				indexes :published_at, type: 'date'
 
+				indexes :numLikesReceived, type: 'integer'
+				indexes :numSkipsReceived, type: 'integer'
+				indexes :numReports, type: 'integer'
+				indexes :numConversations, type: 'integer'
+
 				indexes :sources, type: 'nested' do
           indexes :name, type: 'string', analyzer: 'keyword'
   				indexes :url, type: 'string', index: :not_analyzed
@@ -104,6 +109,10 @@ module SearchableArticle
 				published_at: self.published_at,
 				created_at: self.created_at,
 				updated_at: self.updated_at,
+				numLikesReceived: self.numLikesReceived,
+				numSkipsReceived: self.numSkipsReceived,
+				numReports: self.numReports,
+				numConversations: self.numConversations,
 			}
       ret[:sources] = self.sources.as_json({ only: [:name, :url, :title, :author, :categories, :description, :points, :comments, :normalized_popularity, :published_at, :created_at, :updated_at] }) if self.sources.any?
 			ret

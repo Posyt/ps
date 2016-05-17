@@ -30,6 +30,16 @@ class Article
   field :normalized_popularity, type: Integer # calculated by scraper, ideally between 0 - 100, based on upvotes, comments, etc.
   index  normalized_popularity: 1
 
+  # NOTE: these are modified by pm the node.js server, thus the camelCase
+  field :numLikesReceived, type: Integer, default: 0
+  index  numLikesReceived: 1
+  field :numSkipsReceived, type: Integer, default: 0
+  index  numSkipsReceived: 1
+  field :numReports, type: Integer, default: 0
+  index  numReports: 1
+  field :numConversations, type: Integer, default: 0
+  index  numConversations: 1
+
   # field :scrape_meta, type: Hash # information that might be used to recreate the scrape that got this data
   field :scrape_times, type: Array, default: []
 

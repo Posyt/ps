@@ -38,19 +38,27 @@ https://www.rsssearchhub.com/
 - [ ] Medium
 - [ ] Vice
 - [ ] Upworthy
+- [ ] First Round Review
 - [ ] Science Mag
 - [ ] Science Daily
+- [ ] The Atlantic
 - [ ] Kotaku
+- [ ] Buzzfeed
 - [ ] Polygon
+- [ ] PewResearchCenter
+- [ ] The Onion
+- [ ] Bloomberg
 - [ ] HBR
 - [ ] Github Trending
 - [ ] Designer News
 - [ ] Reddit
 - [ ] Wired
 - [ ] Huff Po
-- [ ] Buzzfeed
 - [ ] Vox
-- [ ] Bloomberg
-- [ ] The Onion
+- [ ] The Economist
 - [ ] Deep Dot Web
 - [ ] Behance
+- [ ] Drudge Report
+- [ ] SoundCloud
+- [ ] YouTube
+- [ ] HypeMachine
