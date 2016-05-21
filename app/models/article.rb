@@ -85,7 +85,7 @@ class Article
     url = Article.resolve_redirects(url)
     # Normalize url by removing query and fragment
     uri = Addressable::URI.parse(url)
-    params_to_remove = /rer|utm|emc|partner/
+    params_to_remove = /rer|utm|emc|partner|gi/
     uri.query_values = uri.query_values.delete_if { |k,v| params_to_remove === k.downcase } if uri.query_values
     result = uri.to_s
     result = result[0...-1] if result.last == "?"
