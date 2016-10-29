@@ -35,6 +35,12 @@ heroku run rake db:mongoid:create_indexes
 http://ctrlq.org/rss/
 https://www.rsssearchhub.com/
 
+- [x] Dribble
+- [x] Hacker News
+- [x] Imgur
+- [x] New York Times
+- [x] Product Hunt
+- [x] The Verge
 - [ ] Medium
 - [ ] Vice
 - [ ] Upworthy
