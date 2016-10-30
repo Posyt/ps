@@ -26,6 +26,9 @@ class NewYorkTimesScraper
       attrs[:summary] = e.summary
       attrs[:description] = Article.html_to_s(e.summary)
 
+      # Exclude the crossword
+      next if attrs[:title] =~ /crossword/i
+
       Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
     end
   end
