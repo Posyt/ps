@@ -35,6 +35,11 @@ heroku run rake db:mongoid:create_indexes
 http://ctrlq.org/rss/
 https://www.rsssearchhub.com/
 
+- [ ] fix duplicates like
+http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-envision-ways-for-new-york-to-absorb-9-million-residents?CSAuthResp=1%3A273626979939598%3A220276%3A3%3A24%3Aapproved%3A535AD9EC5DBCED42128CEA53C4BACF0F
+&
+http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-envision-ways-for-new-york-to-absorb-9-million-residents?CSAuthResp=1%3A173626977631562%3A220276%3A3%3A24%3Aapproved%3AC16CF8A0FDB83C15CB9680D7F95A2DE0
+
 - [x] Dribble
 - [x] Hacker News
 - [x] Imgur
@@ -44,6 +49,7 @@ https://www.rsssearchhub.com/
 - [ ] Medium
 - [ ] Vice
 - [ ] Upworthy
+- [ ] TODO: find scientific journals with good free access papers
 - [ ] First Round Review
 - [ ] Science Mag
 - [ ] Science Daily
