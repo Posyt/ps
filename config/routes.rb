@@ -1,4 +1,5 @@
 require 'sidekiq/web'
+require 'sidetiq/web'
 
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/theadmin', as: 'rails_admin'
