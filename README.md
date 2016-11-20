@@ -19,6 +19,13 @@ rake db:mongoid:create_indexes
 Article.__elasticsearch__.create_index! force: true
 ```
 
+### Re-map & Re-index
+
+```
+Article.__elasticsearch__.create_index! force: true
+Article.all.each { |a| Indexer.perform_async('index', a.class.to_s, a._id.to_s) }
+```
+
 
 ## Deployment
 

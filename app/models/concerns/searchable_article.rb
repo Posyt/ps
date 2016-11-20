@@ -46,18 +46,18 @@ module SearchableArticle
 			}
 		} do
 			mappings dynamic: false do
-				indexes :id, type: 'string', index: :not_analyzed
-        indexes :source, type: 'string', analyzer: 'keyword'
-				indexes :url, type: 'string', index: :not_analyzed
-				indexes :title, type: 'string', analyzer: 'ps_english', fields: {
-					standard: { type: 'string', analyzer: 'standard' },
-					autocomplete: { type: 'string', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
+				indexes :id, type: 'keyword', index: :not_analyzed
+        indexes :source, type: 'keyword'
+				indexes :url, type: 'keyword', index: :not_analyzed
+				indexes :title, type: 'text', analyzer: 'ps_english', fields: {
+					standard: { type: 'text', analyzer: 'standard' },
+					autocomplete: { type: 'text', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
 				}, :boost => 2.0 # TODO: I18N: don't just assume english
-				indexes :categories, type: 'string', analyzer: 'keyword', :boost => 3.0
-				indexes :author, type: 'string', analyzer: 'keyword', :boost => 2.0
-        indexes :description, type: 'string', analyzer: 'ps_english', fields: {
-					standard: { type: 'string', analyzer: 'standard' },
-					autocomplete: { type: 'string', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
+				indexes :categories, type: 'keyword', :boost => 3.0
+				indexes :author, type: 'keyword', :boost => 2.0
+        indexes :description, type: 'text', analyzer: 'ps_english', fields: {
+					standard: { type: 'text', analyzer: 'standard' },
+					autocomplete: { type: 'text', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
 				}, :boost => 1.5 # TODO: I18N: don't just assume english
 				indexes :points, type: 'integer'
 				indexes :comments, type: 'integer'
@@ -72,17 +72,17 @@ module SearchableArticle
 				indexes :numConversations, type: 'integer'
 
 				indexes :sources, type: 'nested' do
-          indexes :name, type: 'string', analyzer: 'keyword'
-  				indexes :url, type: 'string', index: :not_analyzed
-  				indexes :title, type: 'string', analyzer: 'ps_english', fields: {
-  					standard: { type: 'string', analyzer: 'standard' },
-  					autocomplete: { type: 'string', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
+          indexes :name, type: 'keyword'
+  				indexes :url, type: 'keyword', index: :not_analyzed
+  				indexes :title, type: 'text', analyzer: 'ps_english', fields: {
+  					standard: { type: 'text', analyzer: 'standard' },
+  					autocomplete: { type: 'text', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
   				}, :boost => 2.0 # TODO: I18N: don't just assume english
-  				indexes :categories, type: 'string', analyzer: 'keyword', :boost => 3.0
-  				indexes :author, type: 'string', analyzer: 'keyword', :boost => 2.0
-          indexes :description, type: 'string', analyzer: 'ps_english', fields: {
-  					standard: { type: 'string', analyzer: 'standard' },
-  					autocomplete: { type: 'string', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
+  				indexes :categories, type: 'keyword', :boost => 3.0
+  				indexes :author, type: 'keyword', :boost => 2.0
+          indexes :description, type: 'text', analyzer: 'ps_english', fields: {
+  					standard: { type: 'text', analyzer: 'standard' },
+  					autocomplete: { type: 'text', analyzer: 'ps_autocomplete', search_analyzer: 'snowball' }
   				}, :boost => 1.5 # TODO: I18N: don't just assume english
   				indexes :points, type: 'integer'
   				indexes :comments, type: 'integer'

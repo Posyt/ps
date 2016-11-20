@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '5.0.0.1'
 
 # The Database
 # gem 'pg'
-gem 'mongoid', '~> 5.1.0'
+gem 'mongoid'
 
 # Elasticsearch DB
 gem 'elasticsearch-model'
