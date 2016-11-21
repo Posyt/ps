@@ -47,6 +47,9 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 &
 http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-envision-ways-for-new-york-to-absorb-9-million-residents?CSAuthResp=1%3A173626977631562%3A220276%3A3%3A24%3Aapproved%3AC16CF8A0FDB83C15CB9680D7F95A2DE0
 
+- [ ] fix imgur - nothing is getting scraped
+- [ ] fix product hunt - not scraping much
+
 - [x] Dribble
 - [x] Hacker News
 - [x] Imgur
