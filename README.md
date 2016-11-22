@@ -58,6 +58,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [x] The Verge
 - [ ] Medium
 - [ ] Vice
+- [ ] Nautilus
 - [ ] Upworthy
 - [ ] TODO: find scientific journals with good free access papers
 - [ ] First Round Review
@@ -84,3 +85,5 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] SoundCloud
 - [ ] YouTube
 - [ ] HypeMachine
+
+- [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
