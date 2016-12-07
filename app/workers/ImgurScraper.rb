@@ -8,7 +8,7 @@ class ImgurScraper
 
   def perform
     urls = [
-      'http://feeds.feedburner.com/ImgurGallery?format=xml'
+      'http://feeds.feedburner.com/ImgurGallery?format=xml' # TODO: this feed is out of date | might need to use API https://api.imgur.com/#limits
     ]
     urls.each { |url| handle_url(url) }
   end
