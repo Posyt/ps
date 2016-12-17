@@ -57,6 +57,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [x] Product Hunt
 - [x] The Verge
 - [ ] Medium
+- [ ] TODO: scrape book recommendations, ideally freely available books
 - [ ] Vice - https://www.vice.com/en_us/rss
 - [ ] Vice - Creators Project - http://thecreatorsproject.vice.com/rss
 - [ ] Vice - Motherboard - http://motherboard.vice.com/rss?trk_source=motherboard
@@ -88,5 +89,6 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] SoundCloud
 - [ ] YouTube
 - [ ] HypeMachine
+- [ ] The Daily Beast
 
 - [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
