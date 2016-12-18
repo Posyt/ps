@@ -7,27 +7,29 @@ class ImgurScraper
   recurrence { hourly.minute_of_hour(0, 30) }
 
   def perform
-    urls = [
-      'http://feeds.feedburner.com/ImgurGallery?format=xml' # TODO: this feed is out of date | might need to use API https://api.imgur.com/#limits
-    ]
-    urls.each { |url| handle_url(url) }
+    url = "http://imgur.com/"
+    mech = Mechanize.new
+    front_page = mech.get(url)
+    pages = []
+    front_page.search(".post a")[0..29].each do |link|
+      pages << mech.click(link) rescue nil
+    end
+    pages.compact!
+    pages.each_with_index { |page, i| handle_page(page, i) }
   end
 
-  def handle_url url
-    feed = Article.parse_feed url
-    feed.entries.each_with_index do |e, i|
-      attrs = { sources: [{}] }
-      attrs[:source] = "Imgur"
-      attrs[:title] = e.title
-      attrs[:url] = e.url
-      # attrs[:author] = e.author
-      # attrs[:published_at] = DateTime.parse(e.published.to_s)
-      attrs[:image_url] = e.image
-      attrs[:summary] = e.summary
-      attrs[:description] = Article.html_to_s(e.summary)
-      # attrs[:categories] = e.categories
+  def handle_page p, i
+    attrs = { sources: [{}] }
+    attrs[:source] = "Imgur"
+    attrs[:title] = p.search(".post-title").text.strip rescue nil
+    attrs[:url] = p.uri.to_s rescue return
+    attrs[:author] = p.search(".post-account").text.strip rescue nil
+    # attrs[:published_at] = DateTime.parse(e.published.to_s)
+    attrs[:image_url] = p.search(".post-images img").first.attributes["src"].value rescue p.search(".post-images source").first.attributes["src"].value.gsub(".mp4", ".gif") rescue nil
+    attrs[:summary] = p.search(".post-description").to_html rescue nil
+    attrs[:description] = Article.html_to_s(p.search(".post-description").to_html) rescue nil
+    # attrs[:categories] = e.categories
 
-      Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
-    end
+    Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
   end
 end
