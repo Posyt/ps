@@ -90,5 +90,6 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] YouTube
 - [ ] HypeMachine
 - [ ] The Daily Beast
+- [ ] Niice.co
 
 - [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
