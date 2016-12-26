@@ -70,11 +70,13 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Science Daily
 - [ ] The Atlantic
 - [ ] Kotaku
+- [ ] Politico Magazine
 - [ ] Buzzfeed
 - [ ] Polygon
 - [ ] PewResearchCenter
 - [ ] The Onion
 - [ ] Bloomberg
+- [ ] The Next Web
 - [ ] HBR
 - [ ] Github Trending
 - [ ] Designer News
