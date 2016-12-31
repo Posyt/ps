@@ -170,7 +170,8 @@ class Article
     agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
     page = agent.get(self.url)
     !self.title && self.title = page.title.strip rescue self.title
-    !self.description && self.description = page.at("head meta[name='description']")["content"].strip rescue self.description
+    !self.summary && self.summary = page.at("head meta[name='description']")["content"].strip rescue self.summary
+    !self.description && self.description = Article.html_to_s(self.summary).gsub("  ", "") rescue self.description
     !self.author && self.author = page.at("head meta[name='author']")["content"].strip rescue self.author
     !self.categories && self.categories = self.categories | page.at("head meta[name='keywords']")["content"].split(",").map(&:strip).map(&:downcase) rescue self.categories
     !self.image_url && self.image_url = Article.find_best_image(page.images.map(&:to_s)) rescue self.image_url

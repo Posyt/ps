@@ -23,7 +23,7 @@ class ProductHuntScraper
       attrs[:sources][0][:title] = e.title
       attrs[:sources][0][:categories] = e.categories
       attrs[:sources][0][:summary] = e.content
-      attrs[:sources][0][:description] = Article.html_to_s(e.content)
+      attrs[:sources][0][:description] = Article.html_to_s(e.content).gsub("  ", "")
       attrs[:url] = e.url
       attrs[:sources][0][:url] = e.content.scan(/"(.*)">Discussion/).flatten.first
       attrs[:sources][0][:author] = e.author
