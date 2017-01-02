@@ -19,16 +19,28 @@ class ProductHuntScraper
       title_attrs = e.title.split("&#8211;")
 
       attrs = { sources: [{}] }
-      attrs[:sources][0][:name] = "Product Hunt"
-      attrs[:sources][0][:title] = e.title
-      attrs[:sources][0][:categories] = e.categories
-      attrs[:sources][0][:summary] = e.content
-      attrs[:sources][0][:description] = Article.html_to_s(e.content).gsub("  ", "")
-      attrs[:url] = e.url
-      attrs[:sources][0][:url] = e.content.scan(/"(.*)">Discussion/).flatten.first
-      attrs[:sources][0][:author] = e.author
-      attrs[:sources][0][:published_at] = DateTime.parse(e.published.to_s)
-      # TODO: points, comments, normalized_popularity
+      if (e.categories.include?('Podcasts'))
+        attrs[:source] = "Product Hunt"
+        attrs[:title] = e.title
+        attrs[:categories] = e.categories
+        attrs[:summary] = e.content
+        attrs[:description] = Article.html_to_s(e.content).gsub("  ", "")
+        attrs[:url] = e.content.scan(/"(.*)">Discussion/).flatten.first
+        attrs[:author] = e.author
+        attrs[:published_at] = DateTime.parse(e.published.to_s)
+        # TODO: points, comments, normalized_popularity
+      else
+        attrs[:sources][0][:name] = "Product Hunt"
+        attrs[:sources][0][:title] = e.title
+        attrs[:sources][0][:categories] = e.categories
+        attrs[:sources][0][:summary] = e.content
+        attrs[:sources][0][:description] = Article.html_to_s(e.content).gsub("  ", "")
+        attrs[:url] = e.url
+        attrs[:sources][0][:url] = e.content.scan(/"(.*)">Discussion/).flatten.first
+        attrs[:sources][0][:author] = e.author
+        attrs[:sources][0][:published_at] = DateTime.parse(e.published.to_s)
+        # TODO: points, comments, normalized_popularity
+      end
 
       Article.delay_for((i*2).seconds, queue: 'default', retry: 2).create_or_update(attrs)
     end

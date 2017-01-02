@@ -74,6 +74,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Buzzfeed
 - [ ] Polygon
 - [ ] PewResearchCenter
+- [ ] Gallup
 - [ ] The Onion
 - [ ] Bloomberg
 - [ ] The Next Web
@@ -95,3 +96,4 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Niice.co
 
 - [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
+- [ ] Panda and click + Add feeds http://usepanda.com/app/#/

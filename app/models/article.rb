@@ -80,12 +80,20 @@ class Article
     Sanitize.clean(html_string).strip
   end
 
+  def self.use_url? url
+    blacklist = [
+      'libsyn.com', # Product Hunt podcast url - it get's generated on every redirect with an expiration token, so it fails deduplication
+    ]
+    (url =~ /#{blacklist.join('|')}/i).nil?
+  end
+
   def self.normalize_url url
     # Follow redirects to get actual url
-    url = Article.resolve_redirects(url)
+    resolved_url = Article.resolve_redirects(url)
+    url = resolved_url if Article.use_url?(resolved_url)
     # Normalize url by removing query and fragment
     uri = Addressable::URI.parse(url)
-    params_to_remove = /rer|utm|emc|partner|gi|OP/
+    params_to_remove = /rer|utm|emc|partner|gi|OP|app_id/
     uri.query_values = uri.query_values.delete_if { |k,v| params_to_remove === k.downcase } if uri.query_values
     result = uri.to_s
     result = result[0...-1] if result.last == "?"
@@ -116,7 +124,7 @@ class Article
     best = nil
     image_urls.each do |url|
       size = FastImage.size(url)
-      hypotenuse = Math.sqrt(size[0]^2 + size[1]^2)
+      hypotenuse = Math.sqrt(size[0]**2 + size[1]**2)
       if hypotenuse > biggest
         best = url
         biggest = hypotenuse
