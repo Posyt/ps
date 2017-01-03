@@ -82,6 +82,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Github Trending
 - [ ] Designer News
 - [ ] Reddit
+- [ ] Trend Hunter
 - [ ] Wired
 - [ ] Huff Po
 - [ ] Vox

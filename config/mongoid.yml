@@ -4,6 +4,7 @@ production:
      uri: <%= ENV['MONGO_URI'] %>
      options:
        connect_timeout: 15
+       ssl: true
 
 development:
   # Configure available database clients. (required)
