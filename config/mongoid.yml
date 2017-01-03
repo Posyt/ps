@@ -2,6 +2,11 @@ production:
   clients:
     default:
       uri: <%= ENV['MONGO_URI'] %>
+      options:
+        connect_timeout: 15
+        ssl: true
+        ssl_verify: false
+        ssl_allow_invalid_certs: true
 
 development:
   # Configure available database clients. (required)
