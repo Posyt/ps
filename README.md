@@ -57,6 +57,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [x] Product Hunt
 - [x] The Verge
 - [x] Medium
+- [ ] Washington Post
 - [ ] TODO: scrape book recommendations, ideally freely available books
 - [ ] Vice - https://www.vice.com/en_us/rss
 - [ ] Vice - Creators Project - http://thecreatorsproject.vice.com/rss
