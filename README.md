@@ -63,28 +63,32 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Vice - Creators Project - http://thecreatorsproject.vice.com/rss
 - [ ] Vice - Motherboard - http://motherboard.vice.com/rss?trk_source=motherboard
 - [ ] Nautilus
+- [ ] Business Insider
+- [ ] Bloomberg
+- [ ] HBR
+- [ ] Kotaku
+- [ ] Wired
+- [ ] The Onion
 - [ ] Aeon.co
+- [ ] xkcd
+- [ ] Academia.edu
+- [ ] arXiv
 - [ ] Upworthy
 - [ ] TODO: find scientific journals with good free access papers
 - [ ] First Round Review
 - [ ] Science Mag
 - [ ] Science Daily
 - [ ] The Atlantic
-- [ ] Kotaku
 - [ ] Politico Magazine
 - [ ] Buzzfeed
 - [ ] Polygon
 - [ ] PewResearchCenter
 - [ ] Gallup
-- [ ] The Onion
-- [ ] Bloomberg
 - [ ] The Next Web
-- [ ] HBR
 - [ ] Github Trending
 - [ ] Designer News
 - [ ] Reddit
 - [ ] Trend Hunter
-- [ ] Wired
 - [ ] Huff Po
 - [ ] Vox
 - [ ] The Economist
