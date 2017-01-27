@@ -57,22 +57,25 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [x] Product Hunt
 - [x] The Verge
 - [x] Medium
-- [ ] Washington Post
-- [ ] TODO: scrape book recommendations, ideally freely available books
 - [ ] Vice - https://www.vice.com/en_us/rss
 - [ ] Vice - Creators Project - http://thecreatorsproject.vice.com/rss
 - [ ] Vice - Motherboard - http://motherboard.vice.com/rss?trk_source=motherboard
+- [ ] Kotaku
+- [ ] Washington Post
+- [ ] Wallstreet Journal
 - [ ] Nautilus
 - [ ] Business Insider
 - [ ] Bloomberg
+- [ ] Deep Dot Web
 - [ ] HBR
-- [ ] Kotaku
 - [ ] Wired
 - [ ] The Onion
 - [ ] Aeon.co
 - [ ] xkcd
 - [ ] Academia.edu
 - [ ] arXiv
+- [ ] NASA - PubSpace https://www.ncbi.nlm.nih.gov/pmc/funder/nasa/
+- [ ] TODO: scrape book recommendations, ideally freely available books
 - [ ] Upworthy
 - [ ] TODO: find scientific journals with good free access papers
 - [ ] First Round Review
@@ -89,17 +92,22 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Designer News
 - [ ] Reddit
 - [ ] Trend Hunter
-- [ ] Huff Po
-- [ ] Vox
 - [ ] The Economist
-- [ ] Deep Dot Web
 - [ ] Behance
-- [ ] Drudge Report
 - [ ] SoundCloud
 - [ ] YouTube
+- [ ] Twitch
 - [ ] HypeMachine
 - [ ] The Daily Beast
 - [ ] Niice.co
+- [ ] AP
+- [ ] Reuters
+- [ ] The Fiscal Times
+- ~~Drudge Report~~
+- ~~Huff Po~~
+- ~~Vox~~
+- ~~Slate~~
+- ~~Breitbart~~
 
 - [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
 - [ ] Panda and click + Add feeds http://usepanda.com/app/#/
