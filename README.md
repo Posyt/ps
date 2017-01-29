@@ -66,13 +66,26 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Nautilus
 - [ ] Business Insider
 - [ ] Bloomberg
+- [ ] 500px
+- [ ] Instagram
 - [ ] Deep Dot Web
 - [ ] HBR
-- [ ] Wired
+- [ ] Reuters
+- [ ] Wiki News - https://en.wikinews.org/wiki/Main_Page
+- [ ] Alternet - http://www.alternet.org/
+- [ ] AP
+- [ ] Independent - http://www.independent.co.uk/us
 - [ ] The Onion
+- [ ] RT - https://www.rt.com
+- [ ] Sputnik - https://sputniknews.com/
 - [ ] Aeon.co
+- [ ] The New Yorker
 - [ ] xkcd
+- [ ] Ai Topics - http://aitopics.org/news
+- [ ] Science Daily - https://www.sciencedaily.com/newsfeeds.htm
+- [ ] MIT News = http://news.mit.edu/
 - [ ] Academia.edu
+- [ ] Designer News
 - [ ] arXiv
 - [ ] NASA - PubSpace https://www.ncbi.nlm.nih.gov/pmc/funder/nasa/
 - [ ] TODO: scrape book recommendations, ideally freely available books
@@ -82,14 +95,15 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Science Mag
 - [ ] Science Daily
 - [ ] The Atlantic
-- [ ] Politico Magazine
-- [ ] Buzzfeed
-- [ ] Polygon
 - [ ] PewResearchCenter
 - [ ] Gallup
 - [ ] The Next Web
+- [ ] Polygon
 - [ ] Github Trending
-- [ ] Designer News
+- [ ] Wired
+- [ ] Fast Company
+- [ ] Politico Magazine
+- [ ] Buzzfeed
 - [ ] Reddit
 - [ ] Trend Hunter
 - [ ] The Economist
@@ -98,11 +112,16 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] YouTube
 - [ ] Twitch
 - [ ] HypeMachine
-- [ ] The Daily Beast
 - [ ] Niice.co
-- [ ] AP
-- [ ] Reuters
+- [ ] Rational Wiki - http://rationalwiki.org/
 - [ ] The Fiscal Times
+- [ ] The Daily Beast
+- [ ] https://futurism.com/
+- [ ] Curbed
+- [ ] Recode
+- [ ] Eater
+- [ ] SB Nation
+- [ ] Racked
 - ~~Drudge Report~~
 - ~~Huff Po~~
 - ~~Vox~~
@@ -111,3 +130,25 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 
 - [ ] 100 best blogs 2015 https://dailytekk.com/the-100-best-most-interesting-blogs-and-websites-of-2015/?reading=continue
 - [ ] Panda and click + Add feeds http://usepanda.com/app/#/
+
+global research  http://www.globalresearch.ca/
+https://www.rt.com/news/
+https://sputniknews.com/
+http://en.farsnews.com/allstories.aspx
+paul craig roberts  http://www.paulcraigroberts.org/
+consortium news https://consortiumnews.com/
+http://theduran.com/
+antiwar.com  http://www.antiwar.com/
+counterpunch  http://www.counterpunch.org/
+information clearinghouse  http://www.informationclearinghouse.info/
+new eastern outlook  http://journal-neo.org/
+the intercept (Glenn Greenwald's site)  https://theintercept.com/
+http://katehon.com/
+https://www.lewrockwell.com/
+http://www.moonofalabama.org/
+http://thesaker.is/
+http://www.veteransnewsnow.com/
+http://www.veteransnewsnow.com/
+http://wearechange.org/
+http://www.zerohedge.com/
+SOTN - http://stateofthenation2012.com/
