@@ -75,6 +75,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] Alternet - http://www.alternet.org/
 - [ ] AP
 - [ ] Independent - http://www.independent.co.uk/us
+- [ ] The Intercept (Glenn Greenwald's site) - https://theintercept.com/
 - [ ] The Onion
 - [ ] RT - https://www.rt.com
 - [ ] Sputnik - https://sputniknews.com/
@@ -86,6 +87,7 @@ http://www.crainsnewyork.com/article/20161030/REAL_ESTATE/161029841/12-firms-env
 - [ ] MIT News = http://news.mit.edu/
 - [ ] Academia.edu
 - [ ] Designer News
+- [ ] Techtronium - http://techtronium.com/
 - [ ] arXiv
 - [ ] NASA - PubSpace https://www.ncbi.nlm.nih.gov/pmc/funder/nasa/
 - [ ] TODO: scrape book recommendations, ideally freely available books
@@ -142,7 +144,7 @@ antiwar.com  http://www.antiwar.com/
 counterpunch  http://www.counterpunch.org/
 information clearinghouse  http://www.informationclearinghouse.info/
 new eastern outlook  http://journal-neo.org/
-the intercept (Glenn Greenwald's site)  https://theintercept.com/
+
 http://katehon.com/
 https://www.lewrockwell.com/
 http://www.moonofalabama.org/
